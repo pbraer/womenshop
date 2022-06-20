@@ -3,7 +3,6 @@ from django.views.generic import DetailView, View
 from django.http import HttpResponseRedirect
 from django.contrib.contenttypes.models import ContentType
 from django.contrib import messages
-from django.db import transaction
 
 from shop_app.models import (
     bottomwear,
@@ -12,7 +11,6 @@ from shop_app.models import (
     dresses,
     Category,
     LatestProducts,
-    Cart,
     CartProduct,
     recalc_cart
 )
@@ -35,7 +33,7 @@ class BaseView(CartMixin, View):
 
 
 class ProductDetailView(CartMixin, CategoryDetailMixin, DetailView):
-    CT_MODEL_MODEL_CLASS = {  # адреса категорий для URL
+    CT_MODEL_MODEL_CLASS = {  # адреса категорий товаров для ссылки
         'bottomwear': bottomwear,
         'topwear': topwear,
         'bags': bags,

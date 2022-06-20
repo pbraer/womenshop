@@ -13,7 +13,7 @@ from shop_app.models import (
 
 
 class CategoryDetailMixin(SingleObjectMixin):
-    CATEGORY_SLUG_PRODUCT_MODEL = {  # Slug категорий задававшийся при их добавлении
+    CATEGORY_SLUG_PRODUCT_MODEL = {  #slug категории
         'bottomwear': bottomwear,
         'topwear': topwear,
         'bags': bags,
